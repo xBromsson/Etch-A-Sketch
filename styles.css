@@ -1,22 +1,39 @@
+body{
+    display: flex;
+    justify-content: center;
+    
+}
+
 .main-container {
     display: flex;
-    align-items: center;
-    height: 200px;
-    width: 200px;
+    flex-direction: column;
     border: solid;
+    width: 600px;
+    height: 600px;
+
+
 }
 
 div.container{
-    align-items: center;
-
+    display: flex;
+    flex: 1;
+    justify-content: center;
+    border: none;
 }
 
 div.cell{
     flex: 1;
-    background-color: aqua;
-    padding: 10px;
+    background-color: whitesmoke;
+    padding: 0px;
+
 }
 
 div.cell.hover{
-    background-color: azure;
+    background-color: whitesmoke;
+    box-shadow: 1px 1px 3px black;
+    z-index: 0;
+}
+
+div.cell.draw{
+    background-color: black;
 }
