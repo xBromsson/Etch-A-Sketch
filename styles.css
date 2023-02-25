@@ -1,3 +1,15 @@
-.container{
-    
+div.container{
+    display: flex;
+    height: fit-content;
+    width: fit-content;
+    border: solid;
+    border-width: 1px;
+
+}
+
+div.cell{
+    height: 10px;
+    width: 10px;
+    background-color: aqua;
+    padding: 10px;
 }
