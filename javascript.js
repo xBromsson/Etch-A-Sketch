@@ -6,8 +6,10 @@ let gridInput = document.querySelector(".grid");
 let xaxis = gridInput.value;
 let yaxis = gridInput.value;
 let clearGridButton = document.querySelector('button');
+let brushSelection = document.querySelector('input[name="brushes"]:checked')
+let form = document.querySelector('form');
 
-//listeners
+//checks for update to grid size
 clearGridButton.addEventListener("click", generateGrid);
 gridInput.addEventListener("input", (event) => {
 
@@ -21,7 +23,39 @@ gridInput.addEventListener("input", (event) => {
 
 })
 
-//functions
+//checks for update to brush selection
+form.addEventListener('change', function(){
+    brushSelection = document.querySelector('input[name="brushes"]:checked')
+})
+
+//returns color depending on brush selection
+function brushColor(){
+
+    if(brushSelection.value === 'rainbow'){
+        r = randomRange(0,255);
+        b = randomRange(0,255);
+        g = randomRange(0,255);
+        a = 1;
+        return `rgba(${r}, ${g}, ${b}, ${a})`;
+    } else if(brushSelection.value === 'black'){
+        let shade = .1;
+        r = 0;
+        b = 0;
+        g = 0;
+        a = 1;
+        return `rgba(${r}, ${g}, ${b}, ${a})`;
+    }
+
+}
+
+
+
+//returns a random number between given range
+function randomRange(min, max){
+    return Math.floor(Math.random()*(max-min+1)+min)
+}
+
+//removes old grid and creates fresh grid equal to x and y axis
 function generateGrid(){
 
     let currentGrid = document.querySelectorAll('#yaxis.container')
@@ -53,12 +87,14 @@ function generateGrid(){
             cell.addEventListener('mousedown', (event) => {
                 event.preventDefault();
                 isDragging = true;
-                cell.classList.add('draw')
+                cell.style.backgroundColor = brushColor();
             });
             cell.addEventListener('mouseup', () => isDragging = false)
             cell.addEventListener('mousemove', (event) => {
                 if (isDragging){
-                    cell.classList.add('draw') 
+                    cell.style.backgroundColor = brushColor();
+                    //cell.classList.add('draw')
+
                 }
             });
     
@@ -69,7 +105,7 @@ function generateGrid(){
 }
 
 generateGrid();
-
+console.log(brushSelection.value)
 
 
 
