@@ -53,6 +53,7 @@ function generateGrid(){
             cell.addEventListener('mousedown', (event) => {
                 event.preventDefault();
                 isDragging = true;
+                cell.classList.add('draw')
             });
             cell.addEventListener('mouseup', () => isDragging = false)
             cell.addEventListener('mousemove', (event) => {
