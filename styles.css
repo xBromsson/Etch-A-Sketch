@@ -1,17 +1,27 @@
 body{
     display: flex;
     justify-content: center;
+    gap: 25px;
     
+}
+
+.toolbar{
+    width: 150px;
+    background-color: whitesmoke;
+    box-shadow: 1px 1px 3px black;
+    text-align: center;
+}
+
+body > div{
+    border: none;
 }
 
 .main-container {
     display: flex;
     flex-direction: column;
-    border: solid;
+    box-shadow: 1px 1px 3px black;
     width: 600px;
     height: 600px;
-
-
 }
 
 div.container{
@@ -36,4 +46,17 @@ div.cell.hover{
 
 div.cell.draw{
     background-color: black;
+}
+
+h1{
+
+}
+
+h2{
+    text-align: center;
+
+}
+
+h3{
+    font-size: 15px;
 }
