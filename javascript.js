@@ -2,11 +2,13 @@
 //variables
 let isDragging = false;
 const mainContainer = document.querySelector('.main-container');
-let gridInput = document.querySelector(".grid")
-let xaxis = gridInput.value
-let yaxis = gridInput.value
+let gridInput = document.querySelector(".grid");
+let xaxis = gridInput.value;
+let yaxis = gridInput.value;
+let clearGridButton = document.querySelector('button');
 
 //listeners
+clearGridButton.addEventListener("click", generateGrid);
 gridInput.addEventListener("input", (event) => {
 
     if (gridInput.value > 100) {
