@@ -1,0 +1,32 @@
+{
+  "name": "etch-a-sketch",
+  "version": "1.0.0",
+  "description": "A simple Etch-A-Sketch built on the browsers DOM.",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xBromsson/Etch-A-Sketch.git"
+  },
+  "keywords": [
+    "DOM",
+    "Etch-A-Sketch",
+    "HTML",
+    "JavaScript",
+    "Open",
+    "Source",
+    "Easy",
+    "Project"
+  ],
+  "author": "Marvin Brown",
+  "license": "UNLICENSED",
+  "bugs": {
+    "url": "https://github.com/xBromsson/Etch-A-Sketch/issues"
+  },
+  "homepage": "https://github.com/xBromsson/Etch-A-Sketch#readme",
+  "devDependencies": {
+    "live-server": "^1.2.2"
+  }
+}
